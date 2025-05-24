@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | 2TOR-IA</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <!-- Preload -->
+    <link rel="preload" href="images/favicon.png" as="image">
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="images/yarmis.png" alt="Logo Yarmis" class="header-logo">
+                <div class="header-text">
+                    <h1>Regístrate en 2TOR-IA</h1>
+                    <p>Transforma WhatsApp en tu aula virtual</p>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo (obligatorio)</label>
+                    <input type="text" id="nombre" name="nombre" required 
+                           minlength="5" maxlength="100"
+                           pattern="^\s*(\w+\s+){1,24}\w+\s*$"
+                           title="Por favor ingresa al menos 2 palabras (nombre apellido)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Número de teléfono (obligatorio)</label>
+                    <div class="phone-input">
+                        <select id="prefijo" name="prefijo" required>
+                            <option value="+57">Colombia (+57)</option>
+                            <option value="+52">México (+52)</option>
+                            <option value="+51">Perú (+51)</option>
+                            <option value="+56">Chile (+56)</option>
+                            <option value="+54">Argentina (+54)</option>
+                            <option value="+55">Brasil (+55)</option>
+                            <option value="+1">EE.UU./Canadá (+1)</option>
+                            <option value="+34">España (+34)</option>
+                        </select>
+                        <input type="tel" id="telefono" name="telefono" required
+                               minlength="10" maxlength="15"
+                               pattern="\d{10,15}"
+                               title="Por favor ingresa entre 10 y 15 dígitos">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="codigo">Curso de interés</label>
+                    <select id="codigo" name="codigo" required>
+                        <option value="">Selecciona un curso</option>
+                        <option value="alimentos">Manipulación de alimentos</option>
+                        <option value="tips-ia">Tips de IA generativa</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico (opcional)</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <input type="hidden" name="aliado" value="NA">
+                <input type="hidden" name="cerrar_sesiones" value="on">
+                
+                <button type="submit">Registrarse</button>
+            </form>
+            
+            <div id="message" class="hidden"></div>
+
+
+
+
+
+        </main>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+            <div class="logo-corner">
+                <img src="images/Logo.png" alt="Logo">
+            </div>
+</body>
+</html>

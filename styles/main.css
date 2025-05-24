@@ -1,0 +1,311 @@
+:root {
+    --primary-color: #C40088; /*Boton*/
+    --secondary-color: #010630c7;  /*Formulario de registro color 1*/
+    --dark-color: #091263;  /*Formulario de registro color 2*/
+    --light-color: #4CAF50; /*Caja de exito*/
+    --text-color: #ffffff;
+    --light-gray: rgba(245, 245, 245, 0.9);
+    --gray: rgba(221, 221, 221, 0.7);
+    --dark-gray: #777;
+    --white: rgba(255, 255, 255, 0.9);
+    --black: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--black);
+    padding: 20px;
+   min-height: 1vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Images/Wallpaper.JPEG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 1;
+}
+
+
+header {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+    color: var(--white);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* ... Header ... */
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-text {
+    flex: 1;
+}
+/*-----------------------------*/
+header h1 { /*Formulario de registro 2TOR-IA*/
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+header p { /*Porfavor llena tus datos personales*/
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+main {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    
+}
+
+/*-------------------------------------*/
+/* Cajas para el indicativo y para el curso de interes */
+
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+    color: var(--white); /* Texto blanco */
+    appearance: none; /* Elimina el estilo por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+}
+
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.3);
+}
+
+
+select option {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: var(--white);
+    padding: 10px;
+}
+
+/* Estilo para el hover en las opciones */
+select option:hover {
+    background-color: var(--secondary-color);
+}
+
+/* select de prefijo telefónico */
+.phone-input select {
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+}
+
+/* ...-------------------------------------- ... */
+
+
+/*Inputs de error*/
+input:invalid, select:invalid {
+    border-color: #FF3B30;
+}
+
+input:focus:invalid, select:focus:invalid {
+    box-shadow: 0 0 0 2px #FFA000;
+}
+
+
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.phone-input {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-input select {
+    width: 150px;
+}
+
+.phone-input input {
+    flex: 1;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+#message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+    font-weight: 500;
+}
+
+#message.success {
+    background-color: rgba(220, 248, 198, 0.2);
+    color: var(--light-color);
+    border: 1px solid var(--light-color);
+    display: block;
+}
+
+#message.error {
+    background-color: rgba(198, 40, 40, 0.2);
+    color: #ffcdd2;
+    border: 1px solid #c62828;
+    display: block;
+}
+/*---------------------------------------*/
+
+.logo-corner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.logo-corner:hover {
+    opacity: 1;
+}
+
+.logo-corner img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+
+        .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .header-logo {
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+
+    .logo-corner {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .logo-corner img {
+        width: 80px;
+    }
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .phone-input {
+        flex-direction: column;
+    }
+    
+    .phone-input select {
+        width: 100%;
+    }
+    
+    .container {
+        margin: 15px auto;
+    }
+}
